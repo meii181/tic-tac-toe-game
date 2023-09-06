@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans&family=Roboto+Mono&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Roboto Mono", monospace;
+
+}
+
+.text {
+    margin-top: 2rem;
+    font-size: 20px;
+}
+
+p {
+    font-size: 25px;
+    text-align: center;
+}
+
+#playboard {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    background-color: black; 
+    flex-wrap: wrap;
+    border: solid 5px black;
+    border-radius: 5px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: solid 1.5px black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    height: 70px;
+    width: 70px;
+    border: solid 10px rgb(52, 84, 132);
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+.cross {
+    width: 70px;
+    height: 70px;
+    position: relative; /*using before and after to form the cross*/
+    transform: rotate(45deg);
+}
+
+.cross:before, .cross:after{
+    content: "";
+    position: absolute;
+    background-color:rgb(173, 65, 55);
+}
+
+.cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.cross:after {
+    top: 50%;
+    height: 30%;
+    width: 100%;
+    margin-top: -15%;
+}
+
+#restart {
+    font-family: "Roboto Mono", monospace;
+    background-color:rgb(52, 84, 132);
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#restart:active{
+    transform: translate(0px, 5px);
+}
+
+#restart:hover{
+    background-color: white;
+    color:rgb(52, 84, 132);
+    transform: scale(1.2); 
+}
